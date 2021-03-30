@@ -1,21 +1,22 @@
-
-
 function generateVerse() {
   let randomVerse = getRandomVerse();
   let username = getUsername();
-  let personalVerse = randomVerse.replace("يوزر", username);
+  let personalVerse = randomVerse[0].replace("يوزر", username);
+
   let txtVerse = document.getElementById("txtVerse");
-  txtVerse.innerHTML = '<span><i class="fas fa-quote-left"></i></span> '
-			+ personalVerse;
-  console.log(randomVerse);
+  txtVerse.innerHTML = '<span><i class="fas fa-quote-left"></i></span> ' +
+    personalVerse;
+
+  let txtShahed = document.getElementById("shahed");
+  txtShahed.innerHTML = " ~" + randomVerse[1];
 }
 
-function getRandomVerse(){
+function getRandomVerse() {
   let randomNumber = Math.floor(Math.random() * storedVerses.length);
   return storedVerses[randomNumber];
 }
 
-function getUsername(){
+function getUsername() {
   return document.getElementById("txtName").value;
 }
 

@@ -53,6 +53,11 @@ input {
   padding: 10px 10px 10px 10px;
   width: auto;
   max-width: 900px;
+  height: 50%;
+}
+
+.shahed{
+  font-size: 0.6em;
 }
 
 .btn-container {
