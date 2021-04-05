@@ -1,11 +1,12 @@
 let verseContainer;
 let versesList;
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   verseContainer = document.querySelector(".verse-containter");
   verseContainer.style.display = "none";
 });
 
 function generateVerse() {
+  changeBackgroundImage();
   verseContainer.style.display = "block";
   versesList = getVerses();
   let randomVerse = getRandomVerse();
@@ -20,13 +21,19 @@ function generateVerse() {
   txtShahed.innerHTML = " ~" + randomVerse[1];
 }
 
-function getVerses(){
-  
-let selectedGender = document.querySelector('input[name="gender"]:checked').value;
-if(selectedGender === "male")
-  return storedVerses;
+function changeBackgroundImage() {
+  let randomNumber = Math.floor(Math.random() * background_url.length);
+  let url = background_url[randomNumber];
+  document.body.style.transition = "all 2s ease-in-out";
+  document.body.style.backgroundImage = "url('" + url + "')";
+}
 
-return arabicFemaleVerses;
+function getVerses() {
+  let selectedGender = document.querySelector('input[name="gender"]:checked').value;
+  if (selectedGender === "male")
+    return storedVerses;
+
+  return arabicFemaleVerses;
 }
 
 function getRandomVerse() {
