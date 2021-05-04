@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function generateVerse() {
-  changeBackgroundImage();
   verseContainer.style.display = "block";
   versesList = getVerses();
   let randomVerse = getRandomVerse();
@@ -19,13 +18,6 @@ function generateVerse() {
 
   let txtShahed = document.getElementById("shahed");
   txtShahed.innerHTML = " ~" + randomVerse[1];
-}
-
-function changeBackgroundImage() {
-  let randomNumber = Math.floor(Math.random() * background_url.length);
-  let url = background_url[randomNumber];
-  document.body.style.transition = "all 2s ease-in-out";
-  document.body.style.backgroundImage = "url('" + url + "')";
 }
 
 function getVerses() {
