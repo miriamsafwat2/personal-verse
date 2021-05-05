@@ -1,31 +1,31 @@
-var verseContainer;
-var versesList;
+let verseContainer;
+let versesList;
 document.addEventListener("DOMContentLoaded", function() {
   verseContainer = document.querySelector(".verse-containter");
   verseContainer.style.display = "none";
 });
 
-var randomNumber = Math.floor(Math.random() * background_url.length);
-var url = background_url[randomNumber];
+let randomNumber = Math.floor(Math.random() * background_url.length);
+let url = background_url[randomNumber];
 document.body.style.backgroundImage = "url('" + url + "')";
 
 function generateVerse() {
   verseContainer.style.display = "block";
   versesList = getVerses();
-  var randomVerse = getRandomVerse();
-  var username = getUsername();
-  var personalVerse = randomVerse[0].replaceAll("يوزر", username);
+  let randomVerse = getRandomVerse();
+  let username = getUsername();
+  let personalVerse = randomVerse[0].replaceAll("يوزر", username);
 
-  var txtVerse = document.getElementById("txtVerse");
+  let txtVerse = document.getElementById("txtVerse");
   txtVerse.innerHTML =
     '<span><i class="fas fa-quote-left"></i></span> ' + personalVerse;
 
-  var txtShahed = document.getElementById("shahed");
+  let txtShahed = document.getElementById("shahed");
   txtShahed.innerHTML = " ~" + randomVerse[1];
 }
 
 function getVerses() {
-  var selectedGender = document.querySelector('input[name="gender"]:checked').value;
+  let selectedGender = document.querySelector('input[name="gender"]:checked').value;
   if (selectedGender === "male")
     return storedVerses;
 
@@ -33,7 +33,7 @@ function getVerses() {
 }
 
 function getRandomVerse() {
-  var randomNumber = Math.floor(Math.random() * versesList.length);
+  let randomNumber = Math.floor(Math.random() * versesList.length);
   return versesList[randomNumber];
 }
 
