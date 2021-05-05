@@ -1,9 +1,9 @@
 let verseContainer;
 let versesList;
-document.addEventListener("DOMContentLoaded", function() {
+//document.addEventListener("DOMContentLoaded", function() {
   verseContainer = document.querySelector(".verse-containter");
   verseContainer.style.display = "none";
-});
+//});
 
 let randomNumber = Math.floor(Math.random() * background_url.length);
 let url = background_url[randomNumber];
