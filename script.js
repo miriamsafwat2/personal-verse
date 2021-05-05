@@ -14,7 +14,7 @@ function generateVerse() {
   verseContainer.style.display = "block";
   versesList = getVerses();
   let randomVerse = getRandomVerse();
-  //let username = getUsername();
+  let username = getUsername();
   //let personalVerse = randomVerse[0].replaceAll("يوزر", username);
 
   let txtVerse = document.getElementById("txtVerse");
