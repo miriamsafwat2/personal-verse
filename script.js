@@ -14,12 +14,12 @@ function generateVerse() {
   verseContainer.style.display = "block";
   versesList = getVerses();
   let randomVerse = getRandomVerse();
-  let username = getUsername();
-  let personalVerse = randomVerse[0].replaceAll("يوزر", username);
+  //let username = getUsername();
+  //let personalVerse = randomVerse[0].replaceAll("يوزر", username);
 
   let txtVerse = document.getElementById("txtVerse");
   txtVerse.innerHTML =
-    '<span><i class="fas fa-quote-left"></i></span> ' + personalVerse;
+    '<span><i class="fas fa-quote-left"></i></span> ' + randomVerse;//personalVerse;
 
   let txtShahed = document.getElementById("shahed");
   txtShahed.innerHTML = " ~" + randomVerse[1];
