@@ -1,27 +1,31 @@
-let verseContainer;
-let versesList;
+var verseContainer;
+var versesList;
 document.addEventListener("DOMContentLoaded", function() {
   verseContainer = document.querySelector(".verse-containter");
   verseContainer.style.display = "none";
 });
 
+var randomNumber = Math.floor(Math.random() * background_url.length);
+var url = background_url[randomNumber];
+document.body.style.backgroundImage = "url('" + url + "')";
+
 function generateVerse() {
   verseContainer.style.display = "block";
   versesList = getVerses();
-  let randomVerse = getRandomVerse();
-  let username = getUsername();
-  let personalVerse = randomVerse[0].replaceAll("يوزر", username);
+  var randomVerse = getRandomVerse();
+  var username = getUsername();
+  var personalVerse = randomVerse[0].replaceAll("يوزر", username);
 
-  let txtVerse = document.getElementById("txtVerse");
+  var txtVerse = document.getElementById("txtVerse");
   txtVerse.innerHTML =
     '<span><i class="fas fa-quote-left"></i></span> ' + personalVerse;
 
-  let txtShahed = document.getElementById("shahed");
+  var txtShahed = document.getElementById("shahed");
   txtShahed.innerHTML = " ~" + randomVerse[1];
 }
 
 function getVerses() {
-  let selectedGender = document.querySelector('input[name="gender"]:checked').value;
+  var selectedGender = document.querySelector('input[name="gender"]:checked').value;
   if (selectedGender === "male")
     return storedVerses;
 
@@ -29,7 +33,7 @@ function getVerses() {
 }
 
 function getRandomVerse() {
-  let randomNumber = Math.floor(Math.random() * versesList.length);
+  var randomNumber = Math.floor(Math.random() * versesList.length);
   return versesList[randomNumber];
 }
 
