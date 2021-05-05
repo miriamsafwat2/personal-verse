@@ -1,3 +1,6 @@
+const storedVerses = [
+  ["تشدد و تشجع يا يوزر", "يش 1: 9"]
+];
 let verseContainer;
 let versesList;
 //document.addEventListener("DOMContentLoaded", function() {
